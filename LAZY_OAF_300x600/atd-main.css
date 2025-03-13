@@ -1,0 +1,369 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+    border: 0;
+}
+/* HTML5 display-role reset for older browsers */ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+/* Fonts */
+/**
+ * Usage
+ * ----------------------------
+ * font-family: 'Futura Std';
+   font-weight: 600;
+   font-style: normal;
+ * ----------------------------
+ */
+@font-face {
+    src: url('fonts/Muli-Bold.woff') format('woff');
+    font-family: 'Muli';
+    font-weight: bold;
+    font-style: normal;
+
+    font-display: swap;
+}
+@font-face {
+    src: url('fonts/Muli-Regular.woff') format('woff');
+    font-family: 'Muli';
+    font-weight: normal;
+    font-style: normal;
+
+    font-display: swap;
+}
+@font-face {
+    src: url('fonts/NotoSerifTC-Black-Alphabetic.woff') format('woff');
+    font-family: 'Noto';
+    font-weight: 900;
+    font-style: normal;
+
+    font-display: swap;
+}
+/*
+ * ──────────────────────────────────────────────────────── GLOBAL COMPONENTS ─────
+ */
+.main-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 600px;
+    box-sizing: border-box;
+    /* overflow: hidden; */
+    background-color: #FFFFFF;
+    border: 1px solid #000000;
+    transform: translate(-50%, -50%);
+}
+/*
+ * ────────────────────────────────────────────────────────────────── FRAME 2 ─────
+ */
+ .frame {
+    top: 0;
+    opacity: 0;
+}
+ 
+.frame-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: #FFFFFF;
+}
+.logo {
+    top: 20px;
+    z-index: 5;
+    width: 152.44px;
+    height: 15.72px;
+    pointer-events: none;
+}
+/* Carousel */
+.carousel-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    /* background-color: #FFFFFF; */
+    transform: translate(-50%, -50%);
+}
+.carousel-items {
+    position: relative;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    /* overflow: hidden; */
+    /* outline: 1px dashed blue; */
+    transform: translateX(-50%);
+}
+.carousel-item {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 22px;
+    /* height: 100%; */
+    outline: 2px dashed blue;
+    will-change: left;
+    transform: translateZ(0.000001);
+
+}
+.carousel-image {
+    position: relative;
+    left: 50%;
+    margin-top: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    outline: 1px dashed red;
+    transform: translateX(-50%);
+}
+.carousel-product-logo {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #FFFFFF;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+
+    align-items: center;
+    justify-content: center;
+}
+.carousel-product-logo img {
+    max-width: 280px;
+    max-height: 30px;
+}
+.carousel-product-info-wrapper {
+    position: relative;
+    display: flex;
+    height: 139px;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    outline: 1px dashed red;
+
+    align-items: center;
+
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 3px 7px rgba(182, 182, 182, 0.75);
+
+}
+.carousel-product-name {
+    position: relative;
+    /* display: flex; */
+    width: 100%;
+    outline: 1px dashed red;
+
+    align-items: center;
+    justify-content: center;
+}
+.carousel-product-name p {
+    display: -webkit-box;
+    margin: 24px 17px 0 17px;
+    overflow: hidden;
+    font-family: 'PP Editorial New';
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1.2;
+    color: #000000;
+    text-align: left;
+
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+            line-clamp: 2;
+}
+.carousel-product-prices {
+    position: absolute;
+    top: 96px;
+    /* width: 116px; */
+    left: 22px;
+    text-wrap: nowrap;
+    outline: 1px dashed orange;
+}
+.carousel-product-price {
+    display: inline-block;
+    font-family: 'PP Editorial New';
+    font-size: 23px;
+    font-weight: normal;
+    color: #000000;
+    text-align: center;
+
+    /* align-items: center;
+    justify-content: center; */
+}
+.carousel-product-sale-price {
+    display: inline-block;
+    font-family: 'PP Editorial New';
+    font-size: 23px;
+    font-weight: normal;
+    color: #000000;
+    text-align: left;
+
+    /* align-items: center;
+    justify-content: center; */
+}
+.sale-price {
+    color: #989898;
+    text-decoration: line-through;
+}
+.carousel-product-cta {
+    position: absolute;
+    right: 23px;
+    bottom: 20px;
+    display: flex;
+    width: 110px;
+    height: 29px;
+    box-sizing: border-box;
+    padding: 5px 10px 6px 10px;
+    font-family: 'Muli';
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 17px;
+
+    align-items: center;
+    justify-content: center;
+}
+.carousel-product-hotspot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    color: #FFFFFF;
+    cursor: pointer;
+    background-color: blue;
+    opacity: 0.3;
+}
+.left-arrow, .right-arrow {
+    position: absolute;
+    top: 285px;
+    z-index: 2;
+    padding: 9px 7px;
+    cursor: pointer;
+    background: #000000;
+}
+svg #line-1, svg #line-2 {
+    stroke: #FFFFFF;
+}
+.left-arrow {
+    position: absolute;
+    left: 0;
+    cursor: pointer;
+}
+.right-arrow {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+.promo-banner {
+    top: 50px;
+    height: 109px;
+}
+
+
+/* BUTTONS */
+
+.nav {
+    width: 16px;
+    height: 480px;
+    background-color: #ededed;
+    opacity: .0;
+    bottom: 60px;
+}
+.btn-left {
+    left: -0;
+    border-radius: 0 40px 40px 0px;
+}
+.btn-right {
+    right: -0;
+    border-radius: 40px 0px 0px 40px;
+}
+.btn-left,
+.btn-right { 
+    transition: opacity 0.3s ease; /* Transition effect for opacity */
+}
+.btn-left:hover,
+.btn-right:hover {
+    opacity: .5; /* Change opacity on hover */
+}
+
+
+
+/* TICKER */
+.ticker-wrapper {
+    height: 33px;
+    width: 280px;
+    bottom: 0;
+    overflow: hidden;
+    left: 10px;
+    pointer-events: none;
+}
+.ticker-bg {
+    bottom: 0;
+    height: 33px;
+    pointer-events: none;
+    background-color: #000000;
+}
+.ticker {
+    bottom: 7px;
+    /* width: 300px; */
+    overflow: visible;
+    white-space: nowrap;
+    pointer-events: none;
+    will-change: left;
+    transform: translateZ(0.000001);
+}
+.ticker-text {
+    display: inline-block;
+    margin-left: 0;
+    color: #FFFFFF;
+    font-family: Helvetica, sans-serif;
+    font-size: 15.9px;
+}
+.ticker-text:not(:first-child) {
+    margin-left: 20px; /* Space between ticker text items */
+}
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    /* background-color: red; */
+    /* opacity: 0.3; */
+}
+* {
+    outline: none !important;
+}

@@ -1,0 +1,499 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline; 
+    border: 0;
+}
+/* HTML5 display-role reset for older browsers */ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-spacing: 0; 
+    border-collapse: collapse;
+}
+/* Fonts */
+/**
+ * Usage
+ * ----------------------------
+ * font-family: 'MetricHPE';
+   font-weight: 600;
+   font-style: normal;
+ * ----------------------------
+ */
+@font-face {
+    src: url('fonts/Graphik-Regular.eot');
+    src: local('Graphik Regular'), local('Graphik-Regular'),
+    url('fonts/Graphik-Regular.eot?#iefix') format('embedded-opentype'),
+    url('fonts/Graphik-Regular.woff2') format('woff2'),
+    url('fonts/Graphik-Regular.woff') format('woff'),
+    url('fonts/Graphik-Regular.ttf') format('truetype'),
+    url('fonts/Graphik-Regular.svg#Graphik-Regular') format('svg');
+    font-family: 'Graphik';
+    font-weight: normal;
+    font-style: normal;
+
+    font-display: swap;
+}
+@font-face {
+    src: url('fonts/InvescoEditor-Regular.eot');
+    src: local('Invesco Editor Regular'), local('InvescoEditor-Regular'),
+    url('fonts/InvescoEditor-Regular.eot?#iefix') format('embedded-opentype'),
+    url('fonts/InvescoEditor-Regular.woff2') format('woff2'),
+    url('fonts/InvescoEditor-Regular.woff') format('woff'),
+    url('fonts/InvescoEditor-Regular.ttf') format('truetype'),
+    url('fonts/InvescoEditor-Regular.svg#InvescoEditor-Regular') format('svg');
+    font-family: 'Invesco Editor';
+    font-weight: normal;
+    font-style: normal;
+
+    font-display: swap;
+}
+@font-face {
+    src: url('fonts/GraphikCompact-Semibold.eot');
+    src: url('fonts/GraphikCompact-Semibold.eot?#iefix') format('embedded-opentype'),
+    url('fonts/GraphikCompact-Semibold.woff2') format('woff2'),
+    url('fonts/GraphikCompact-Semibold.woff') format('woff'),
+    url('fonts/GraphikCompact-Semibold.ttf') format('truetype'),
+    url('fonts/GraphikCompact-Semibold.svg#GraphikCompact-Semibold') format('svg');
+    font-family: 'Graphik Compact';
+    font-weight: 600;
+    font-style: normal;
+
+    font-display: swap;
+}
+@font-face {
+    src: url('fonts/Graphik-Medium.eot');
+    src: url('fonts/Graphik-Medium.eot?#iefix') format('embedded-opentype'),
+    url('fonts/Graphik-Medium.woff2') format('woff2'),
+    url('fonts/Graphik-Medium.woff') format('woff'),
+    url('fonts/Graphik-Medium.ttf') format('truetype'),
+    url('fonts/Graphik-Medium.svg#Graphik-Medium') format('svg');
+    font-family: 'Graphik';
+    font-weight: 500;
+    font-style: normal;
+
+    font-display: swap;
+}
+@font-face {
+    src: url('fonts/GraphikCompact-Regular.eot');
+    src: url('fonts/GraphikCompact-Regular.eot?#iefix') format('embedded-opentype'),
+    url('fonts/GraphikCompact-Regular.woff2') format('woff2'),
+    url('fonts/GraphikCompact-Regular.woff') format('woff'),
+    url('fonts/GraphikCompact-Regular.ttf') format('truetype');
+    font-family: 'Graphik Compact Regular';
+    font-weight: normal;
+    font-style: normal;
+
+    font-display: swap;
+}
+@font-face {
+    src: url('fonts/Graphik-Semibold.woff2') format('woff2'),
+    url('fonts/Graphik-Semibold.woff') format('woff');
+    font-family: 'Graphik Semibold';
+    font-weight: 600;
+    font-style: normal;
+
+    font-display: swap;
+}
+/* Creative */
+.main-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 600px;
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: grey;
+    border: 1px solid #B6B6B6;
+    opacity: 0;
+}
+.a-100 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.hotspot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0.2;
+}
+/* BG image wrapper. */
+
+.bg_border {
+    position: absolute;
+    z-index: 2;
+    width: 298px;
+    height: 249px;
+    box-sizing: border-box;
+    border: 1px solid white;
+    border-style: solid;
+}
+#background_exit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 8;
+    width: 100%;
+    height: 100%;
+}
+/* Defaults */
+.copy-container {
+    position: absolute;
+    top: 0;
+    display: flex;
+    padding: 0;
+
+    align-items: center;
+    justify-content: center;
+}
+.centered-text {
+    width: 260px;
+    font-size: 24px;
+    text-align: center;
+}
+.centered-element {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* Frame 1 */
+
+.intro-container {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-start;
+}
+.f1-parent {
+    background-color: #FFFFFF;
+}
+
+.f1-copy {
+    max-width: 300px;
+    max-height: 40px;
+    padding: 0 0 0 0;
+    font-family: 'Invesco Editor';
+    font-size: 32px;
+    color: #0E09D2;
+    text-align: left;
+    letter-spacing: -0.4px;
+}
+.f1-copy-bottom-left {
+    position: absolute;
+    bottom: 15.6px;
+    left: -8.7px;
+    width: 150px;
+    font-family: 'Graphik Compact';
+    font-size: 18px;
+    font-weight: 600;
+    color: #000AD2;
+    text-align: center;
+    letter-spacing: -0.1px;
+}
+.intro-img {
+    position: absolute;
+    top: 247px;
+    left: 41px;
+    width: 346px;
+    height: 89px;
+    background-color: #FF0000;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#square-svg {
+    position: absolute;
+}
+.disclaimer-1-copy, .disclaimer-2-copy, .disclaimer-3-copy  {
+    position: absolute;
+    top: 14px;
+    right: 13px;
+    width: 300px;
+    height: 10px;
+    font-family: 'Graphik Compact Regular';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 14px;
+    color: #000AD2;
+    text-align: right;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+}
+.disclaimer-1-copy span, .disclaimer-2-copy span, .disclaimer-3-copy span {
+    font-size: 18px;
+}
+.disclaimer-1-copy, .disclaimer-2-copy {
+    /* text-shadow: 1px 1px #ffffff; */
+}
+.logo-intro {
+    position: absolute;
+    right: 18px;
+    bottom: 11px;
+}
+.logo-intro img {
+    width: 117px;
+}
+/* Frame 2 */
+
+.f2-parent .copy-container {
+    padding: 0 0 0 0;
+}
+.f2-parent {
+    overflow: hidden;
+}
+.f2-copy {
+    position: relative;
+    display: block;
+    width: fit-content;
+    max-width: 220px;
+    padding: 0 9.5px 0 9.5px;
+    margin-top: 0;
+    font-family: inherit;
+    font-family: 'Invesco Editor';
+    font-size: 20px;
+    line-height: 38px;
+    color: #FFFFFF;
+    color: #FFFFFF;
+    letter-spacing: -3;
+    white-space: nowrap;
+    background-color: #000AD2;
+}
+.f2-img {
+    position: absolute;
+}
+.mask-div {
+    position: absolute;
+    right: 127px;
+    width: fit-content;
+    overflow: hidden;
+}
+.copy-bottom-left {
+    position: absolute;
+    bottom: 15.6px;
+    left: -8.7px;
+    width: 150px;
+    font-family: 'Graphik Compact';
+    font-size: 18px;
+    font-weight: 600;
+    color: #FFFFFF;
+    text-align: center;
+    letter-spacing: -0.1px;
+}
+.f2-parent .copy-bottom-left {
+    text-shadow: 0px 0px 5px #000000, 0px 0px 20px #644176, 0px 0px 20px #644176, 0px 0px 20px #644176, 0px 0px 20px #644176, 0px 0px 20px #644176, 0px 0px 20px #644176;
+}
+.f3-parent .copy-bottom-left, .f4-parent .copy-bottom-left {
+    text-shadow: none;
+}
+/* f3 copy */
+.f3-parent {
+    display: flex;
+    text-align: left;
+    background-color: #0E09D2;
+    opacity: 1;
+
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.f3-copy-container {
+    /* display: flex;  */
+    width: 210px;
+    padding-left: 36px;
+    font-size: 16px;
+    /* justify-content: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap; */
+}
+.f3-copy {
+    padding-right: 50px;
+}
+.f3-copy, .f3-copy-2 {
+    position: absolute;
+    top: 148px;
+    left: 36px;
+    font-family: 'Graphik';
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 1.25;
+    color: #FFFFFF;
+    text-align: left;
+    letter-spacing: 0.6px;
+}
+.logo-2 {
+    position: absolute;
+    right: 131px;
+    bottom: 35px;
+}
+.logo-2 img {
+    position: absolute;
+    width: 117px;
+}
+/*.disclaimer-2-copy, .disclaimer-3-copy  {*/
+.disclaimer-3-copy {
+    display: none;
+    color: #FFFFFF;
+}
+/* Frame 4 */
+
+#horiz-container {
+    position: absolute;
+    top: 0;
+    /* display: flex; */
+    flex-direction: row;
+    justify-content: center;
+}
+.holder {
+    /* display: flex;
+
+    align-items: center; */
+}
+.f4-parent {
+    background-color: #0E09D2;
+}
+.f4-parent .centered-text {
+    width: 100%;
+}
+.f4-copy-child {
+    position: absolute;
+    width: 300px;
+    height: max-content;
+    margin: auto;
+}
+.f4-copy-1 {
+    position: absolute;
+    top: 148px;
+    left: 36px;
+    width: 300px;
+    font-family: 'Graphik';
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 30px;
+    color: #FFFFFF;
+    text-align: left;
+}
+
+.f4-copy-2 {
+    position: absolute;
+    top: 280px;
+    left: 66px;
+    width: 163px;
+    height: 29px;
+    padding: 5px 0 0 0;
+    font-family: 'Graphik Semibold';
+    font-size: 15px;
+    font-weight: 600;
+    color: #FFFFFF;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #000AD2;
+    border: 1.5px solid #FFFFFF;
+}
+.f4-copy-3 {
+    position: relative;
+    top: 193px;
+    left: 5px;
+    width: 150px;
+    font-family: 'Graphik Compact';
+    font-size: 15px;
+    font-weight: 500;
+    color: #FFFFFF;
+    text-align: center;
+    letter-spacing: -0.1px;
+}
+.logo-3 {
+    position: absolute;
+    right: 13px;
+    bottom: 13px;
+}
+.logo-3 img {
+    width: 117px;
+}
+.disclaimer-btn-parent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 260px;
+    height: 30px;
+}
+.disclaimer-btn-copy {
+    position: absolute;
+    top: 15px;
+    right: 12px;
+    width: 300px;
+    height: 25px;
+    font-family: 'Graphik Compact Regular';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 19px;
+    color: #FFFFFF;
+    text-align: right;
+}
+.disclaimer-btn-copy span {
+    font-size: 18.2px;
+}
+.disclaimer-copy-container {
+    display: flex;
+    padding-left: 7px;
+    background-color: #CFFAFF;
+
+    align-items: center;
+    justify-content: flex-start;
+}
+.disclaimer-copy {
+    position: relative;
+    top: 3px;
+    width: 240px;
+    font-family: 'Graphik Compact Regular';
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 14px;
+    color: #000078;
+    /*    letter-spacing: -0.06px; */
+}
+.disclaimer-copy span {
+    font-family: 'Graphik Compact';
+    font-weight: 600;
+}
+.disclaimer-close {
+    position: absolute;
+    top: 7px;
+    right: 13px;
+    width: 40px;
+    height: 40px;
+}
+.disclaimer-close-copy {
+    position: absolute;
+    top: 2px;
+    right: 11px;
+    font-family: 'Graphik';
+    font-size: 16px;
+    font-weight: bold;
+    color: #000078;
+}
